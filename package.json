@@ -26,7 +26,8 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-session": "^1.0.2",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "uuid": "^3.1.0"
   },
   "description": "Building Ponz.io, with its endearingly upside-down-triangle-shaped business model.",
   "main": "app.js",

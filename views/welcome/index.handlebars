@@ -1,2 +1,17 @@
-<h1>Welcome, {{currentUser.username}}</h1><br>
-<h1>Welcome, your referral link is <a href="http://localhost:3000/referredby/{{link}}">http://ponzi.get.rich/{{link}}</a></h1><br>
+<div class="welc"><h1>Welcome, {{currentUser.username}}
+Your referral link is: <a href="http://localhost:3000/referredby/{{link}}">http://ponzi.get.rich/{{link}}</a></h1>
+</div>
+
+<div class="points"><h1>You Now Have <img src="../images/cash.jpg" alt="cash" style="width:125px;height:150px;">{{currentUser.points}}$ !! </h1>
+
+</div>
+
+
+<div class="referred welc"><h1>This is who hooked you up!:</h1>
+{{#each users as |user| }}
+<div class="back" style="background:green">
+<ul><ul><li>{{user}}</li></ul></ul> 
+{{/each}}
+</div>
+
+

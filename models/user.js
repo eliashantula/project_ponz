@@ -1,13 +1,16 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 const bcrypt = require("bcrypt");
 const uniqueValidator = require("mongoose-unique-validator");
+var uuid = require('uuid');
 
 const UserSchema = mongoose.Schema({
+
   username: { type: String },
   email: { type: String, required: true, unique: true },
   passwordHash: { type: String, required: true },
-  parent: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-  children: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+  parent: {type: Schema.Types.ObjectId, ref: 'User' },
+  children:[{ type: Schema.Types.ObjectId, ref: "User"}],
   points: { type: Number }
 });
 

@@ -142,7 +142,7 @@ app.get("/", async (req, res) => {
        return child.username
       })
       console.log("_________________V_____________")
-      //console.log (users)
+      console.log (users)
 
       console.log("_________________V_____________")
       
@@ -236,8 +236,8 @@ const populateChild = async(parentId, userId) =>{
     let parent = await User.findById(parentId)
     while (check) {
         check = false;
-    	//parent.children.push(userId)
-    	parent.points +=  await calculatePoints(distance)//
+    	parent.children.push(userId)
+    	parent.points +=  await calculatePoints(distance)
     	await parent.save();
     	if (parent.parent){
     	   parentId = parent.parent;
@@ -251,47 +251,7 @@ const populateChild = async(parentId, userId) =>{
 };
 
 
-/*const populateRef = async(currentId) =>{
-    let check = true 
-    let distance = 1
-    let firstUser = await User.findById(currentId)
-    let users = await User.findById(currentUser._id).populate("children")
-     let user = await users.children.map(child =>{
-       return [child.username]
-      })
-    let results = [];
-    while (check) {
-        check = false;
-    	//parent.children.push(userId)
-    	for (var i =0; i < users.children.length; i++){
 
-    		if (user.[i].parent === currentId){
-    			let points = await calculatePoints(distance)//
-    			results.push([users.children[i].username, points])
-    			distance +=1 
-    		    firstUser = await User.findById(users.children[i]._id);
-    		    if (firstUser.children){
-
-    		    }
-
-    		}
-
-    	}
-    	results.push([child.username])
-
-
-    	})
-    	parent.points +=  await calculatePoints(distance)//
-    	if (parent.parent){
-    	   parentId = parent.parent;
-           parent = await User.findById(parentId);
-           distance += 1;
-    	check = true;
-    	}
-
-    }
-
-}; */
 
 
 
